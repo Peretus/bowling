@@ -5,25 +5,22 @@ require_relative '../bowling_game.rb'
 
 
 describe BowlingGame do 
+	let(:game) { BowlingGame.new}
+
 	describe '.initialize' do 
 		it 'sets @rolls to an empty array' do 
-			game = BowlingGame.new
-
 			expect(game.rolls).to eql []
 		end
 	end
 
 	describe "#score" do
 		it "should set the score to 0 when we have all gutterballs" do
-
-			game = BowlingGame.new
 			20.times {game.roll(0)}
 
 			expect(game.score).to eq 0
 		end
 
 		it "should set the score as 20 when one pin is knocked down on each roll" do 
-			game = BowlingGame.new
 			20.times { game.roll(1) }
 
 			expect(game.score).to eq 20
