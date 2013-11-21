@@ -21,5 +21,12 @@ describe BowlingGame do
 
 			expect(game.score).to eq 0
 		end
+
+		it "should set the score as 20 when one pin is knocked down on each roll" do 
+			game = BowlingGame.new
+			20.times { game.roll(1) }
+
+			expect(game.score).to eq 20
+		end
 	end
 end
