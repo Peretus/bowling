@@ -9,7 +9,7 @@ describe BowlingGame do
 		it 'sets @rolls to an empty array' do 
 			game = BowlingGame.new
 
-			expect game.rolls.to eql []
+			expect(game.rolls).to eql []
 		end
 	end
 end
